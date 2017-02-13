@@ -231,11 +231,18 @@ getFBOType = (gl, fbo) ->
 
 assertFloatFBO = (gl) ->
     tex = createTexture gl, 100, 100
-    fbo = createFBO gl, tex
+    try
+        fbo = createFBO gl, tex
+    catch error
+        throw """
+Writing (using FBO) float textures unsupported.
+If using Safari, try Chrome or Firefox on desktop.
+"""
+
     type = getFBOType gl, fbo
     assert type == gl.FLOAT, """
 Reading (readPixels) float textures unsupported.
-If using Safari, try Chrome or Firefox.
+If using Safari, try Chrome or Firefox on desktop.
 """
 
 
