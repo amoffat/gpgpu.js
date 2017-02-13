@@ -7,6 +7,23 @@ computing technology, like CUDA or OpenCL.
 I will probably not be expanding on this utility unless there is substantial
 interest.
 
+## Benchmarks
+
+Running the following kernel on 100M floats:
+
+* **CPU Kernel:** `(num) -> num + Math.tan(Math.cos(Math.sin(num * num)))` 
+* **GPU Kernel:** `dst = src + tan(cos(sin(src * src)));`
+
+```
+CPU: 6851.25ms
+GPU Total: 1449.29ms
+GPU Execution: 30.64ms
+GPU IO: 1418.65ms
+Theoretical Speedup: 223.59x
+Actual Speedup: 4.73x
+```
+
+
 ## Basic Usage
 
 ```coffeescript
