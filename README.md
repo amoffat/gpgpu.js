@@ -1,6 +1,6 @@
 # gpgpu.js
 
-This is a toy utility for [this blog post](https://amoffat.github.io/held-karp-demo/).
+This is a toy utility for [this blog post](https://amoffat.github.io/held-karp-gpu-demo/).
 It is designed to abstract away WebGL
 as a graphics technology and make it behave more like a general-purpose
 computing technology, like CUDA or OpenCL.
